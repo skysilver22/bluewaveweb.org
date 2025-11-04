@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BlueWaveWeb Studio — Presentation</title>
+    <link rel="icon" href="data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+    <defs>
+      <linearGradient id='g' x1='0' x2='1' y1='0' y2='1'>
+        <stop offset='0' stop-color='%2300e0ff'/>
+        <stop offset='1' stop-color='%233a6bff'/>
+      </linearGradient>
+    </defs>
+    <rect width='64' height='64' rx='12' fill='%23070b18'/>
+    <path d='M10 40 C20 18 44 18 54 40 C44 36 24 44 10 40Z' fill='url(%23g)' opacity='0.98'/>
+  </svg>">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="BlueWaveWeb — Digital studio demo for client proposals.">
+</head>
+
+<body>
+    <!-- Canvas background -->
+    <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#">
+                <!-- Inline emblem SVG logo (emblem badge style, bright + digital) -->
+                <div class="logo" aria-hidden="true">
+                    <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <defs>
+                            <linearGradient id="lg1" x1="0" x2="1">
+                                <stop offset="0" stop-color="#00e0ff" />
+                                <stop offset="1" stop-color="#3a6bff" />
+                            </linearGradient>
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <rect x="2" y="2" width="60" height="60" rx="12" fill="#06101b" />
+                        <g filter="url(#glow)">
+                            <path d="M9 38 C17 20 47 20 55 38 C47 34 25 44 9 38 Z" fill="url(#lg1)" opacity="0.95" />
+                            <circle cx="48" cy="18" r="6" fill="rgba(255,255,255,0.07)" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="brand-text">
+                    <span class="site-name">BlueWaveWeb</span>
+                    <small class="tagline">Studio • Digital Experiences</small>
+                </div>
+            </a>
+
+            <nav class="main-nav" aria-label="Main">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <button class="btn btn-ghost" id="cta-btn">Get a Proposal</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <h1 class="reveal">We craft <span>high-impact</span> digital presences</h1>
+                    <p class="lead reveal-delay">Original design, performance-first builds, and brand-led experiences
+                        tailored to your business goals.</p>
+                    <div class="hero-actions reveal-delay-2">
+                        <a href="#work" class="btn btn-primary">See Our Work</a>
+                        <button class="btn btn-outline" id="demo-btn">Live Demo</button>
+                    </div>
+                    <ul class="stats reveal-delay-3">
+                        <li><strong>5+</strong> Years experience</li>
+                        <li><strong>50+</strong> Projects</li>
+                        <li><strong>Global</strong> Clients</li>
+                    </ul>
+                </div>
+
+                <div class="hero-right reveal-right">
+                    <!-- Realistic hero image from Unsplash -->
+                    <figure class="hero-media">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=8e0d2f8d6b4b1b5a5d4a8a2e6f2b3a50"
+                            alt="Team collaborating on a laptop" />
+                        <figcaption>Design review & collaboration</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work / Projects -->
+        <section id="work" class="work section">
+            <div class="container">
+                <h2 class="section-title reveal">Selected Projects</h2>
+                <p class="section-lead reveal-delay">Realistic case studies and visual storytelling.</p>
+
+                <div class="projects-grid">
+                    <article class="project-card fade-up">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1100&auto=format&fit=crop&s=0f7c8a8b6b9a1d2f3c4b5a6c7d8e9f00"
+                            alt="Project - office workspace" />
+                        <div class="card-body">
+                            <h3>Corporate Rebrand</h3>
+                            <p>A refined identity and site for an enterprise consultancy.</p>
+                            <button class="btn btn-ghost" onclick="toast('Requesting case study...')">Case
+                                study</button>
+                        </div>
+                    </article>
+
+                    <article class="project-card fade-up">
+                        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1100&auto=format&fit=crop&s=27b4a5b6c0a1b2c3d4e5f6a7b8c9d0e1"
+                            alt="Project - product design" />
+                        <div class="card-body">
+                            <h3>Product Launch Site</h3>
+                            <p>An immersive microsite to drive early-adopter signups.</p>
+                            <button class="btn btn-ghost" onclick="toast('Downloading brief...')">Case study</button>
+                        </div>
+                    </article>
+
+                    <article class="project-card fade-up">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1100&auto=format&fit=crop&s=6f9a3d4c2b1e5f7a8d9c0b2a3e4f5678"
+                            alt="Project - creative team" />
+                        <div class="card-body">
+                            <h3>Studio Website</h3>
+                            <p>Bold visuals and a fast, accessible codebase.</p>
+                            <button class="btn btn-ghost" onclick="toast('Opening visuals...')">Case study</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach -->
+        <section id="approach" class="approach section">
+            <div class="container">
+                <h2 class="section-title reveal">Our Approach</h2>
+                <div class="approach-grid">
+                    <div class="step fade-up">
+                        <h4>Research</h4>
+                        <p>Understanding your audience and business outcomes.</p>
+                    </div>
+                    <div class="step fade-up">
+                        <h4>Design</h4>
+                        <p>High-fidelity prototypes and accessible UI patterns.</p>
+                    </div>
+                    <div class="step fade-up">
+                        <h4>Build</h4>
+                        <p>Performance-first implementation and clean code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact section">
+            <div class="container contact-grid">
+                <div class="contact-left fade-up">
+                    <h2>Let's talk about your project</h2>
+                    <p>Tell us about goals, timeline, and budget — we'll propose a plan.</p>
+                    <a class="btn btn-primary" href="mailto:hello@bluewaveweb.org">Email Us</a>
+                </div>
+
+                <form class="contact-form fade-up" onsubmit="handleContact(event)">
+                    <label>
+                        <span>Name</span>
+                        <input name="name" required placeholder="Your name">
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input name="email" type="email" required placeholder="you@company.com">
+                    </label>
+                    <label>
+                        <span>Message</span>
+                        <textarea name="message" rows="4" placeholder="Brief description"></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button class="btn btn-outline" type="button" onclick="saveDraft()">Save draft</button>
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast container -->
+    <div id="toast-container" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> BlueWaveWeb Studio — Built with craft & clarity.</p>
+            <nav class="small-nav">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
